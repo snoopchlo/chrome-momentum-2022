@@ -1,0 +1,100 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+@import "./background.scss";
+@import "./login-form.scss";
+
+@import "./main.scss";
+@import "./search.scss";
+@import "./nav.scss";
+@import "./todo.scss";
+@import "./footer.scss";
+
+
+// -----how to use mixins -> @include name()
+
+// a:nth-child(odd) {
+//     @include link(blue);
+// }
+
+// a:nth-child(even) {
+//     @include link(red);
+// }
+
+// a:nth-child(odd) {
+//     @include link(odd);
+// }
+
+// a:nth-child(even) {
+//     @include link(even);
+// }
+
+// ----- how to use ::content
+// h1 {
+//     color: red;
+//     @include responsive("phone") {
+//         color: yellow;
+//     }
+//     @include responsive("tablet") {
+//         color: blue;
+//     }
+// }
+
+* {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    padding: 0; 
+}
+input:focus {
+    outline: none;
+}
+
+.hidden {
+    display: none!important;
+}
+
+body {
+    min-height: 100vh;
+    @include flex-column-center-center();
+    overflow: hidden;
+    font-family: $inter;
+    // @include responsive();
+    @include responsive();
+    
+}
+
+
+
+.main {
+    z-index: 10;
+    // @include responsive();
+}
+
+ul {
+    list-style: none;
+    
+}
+a,li {
+    text-decoration: none!important;
+    list-style: none;
+}
+.sizeUp {
+    animation: handleSizeUp 0.5s ease-in forwards;
+    // border-radius: 1rem;
+}
+
+@keyframes handleSizeUp {
+    to {
+        height: 90vh;
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+

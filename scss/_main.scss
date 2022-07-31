@@ -1,0 +1,147 @@
+@import "./mixins.scss";
+
+// Main Container
+.main {
+    width: 100%;
+    height: 100vh;
+    padding: 1.3rem 4rem;        
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    // Greeting Text on the top
+    .greeting {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        text-transform: capitalize;
+        font-size: 3rem;  
+        color: rgb(24, 23, 23);
+    }
+    .quotes-container {
+        margin-bottom: 1rem;
+        color: rgb(84, 83, 83);
+    }
+}
+    // Widgets     
+    .contents {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 1.5fr;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas: 
+        "widget todo"
+        "shortcut todo";
+        grid-column-gap: 30px;
+        grid-row-gap: 8px;
+        // Clock-container
+        .clock-container {
+            padding-inline: 1rem;
+                h2 {
+                    font-size: 1.5rem;
+                    letter-spacing: 1px;
+                    font-weight: 700; 
+                    color: white;
+                }
+            }
+        // Shortcut-container    
+        .short-cuts {
+            grid-area: shortcut;
+            ul {
+                padding-top: 1rem;
+                @include flex-row-end-spacearound();
+                li {
+                    list-style: none;
+                    cursor: pointer;
+                    width: 3rem;
+                    aspect-ratio: 1/1;
+                    @include glass();
+                    @include flex-row-center-center();
+                    transition: all 0.3s;
+                    a {
+                        color: inherit;
+                    }
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+        // Widget = time + weather
+        .widget {
+            height: 100%;
+            overflow: hidden;
+            grid-area: widget;
+            @include lighter-glass();
+            .clock-container {
+                height: 50%;
+                @include flex-row-center-center();
+                font-size: 0.6rem;
+                
+                font-weight: 300;
+                .clock {
+                    padding: 1rem 2rem;
+                    border-bottom: solid 2px white;
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    color: white;
+                }
+            }
+            // Weather-city-container
+            .weather-city {
+                height: 50%;
+                cursor: pointer;
+                grid-area: weather;
+                @include flex-row-center-center();
+                justify-content: space-around;
+                padding-bottom: 1rem;
+                font-weight: 700;
+                padding-inline: 1rem;
+                //location icon
+                .location__icon {
+                    color: white;
+                }
+            //city name
+            .city-name {
+                @include flex-row-center-center();
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: white;
+                padding-left: 1rem;
+            
+                letter-spacing: 4px;
+                i {
+                    padding-right: 0.5rem;
+                }
+            }
+            &:hover .weather-info {
+                z-index: 10;
+                width: 100%!important;
+                // overflow: hidden;
+                transform: translateY(0);
+                }
+            .weather-info {
+                bottom: 0;
+                left: 0;
+                overflow: hidden;
+                transition: all 0.5s;
+                position: absolute;
+                width: 100%!important;
+                height: 50%;
+                @include lighter-glass();
+                @include flex-row-center-center();
+                background: rgba(255, 255, 255, 0.47);
+                border-radius: 0;
+                transform: translateY(100%);
+                z-index: 10;
+                padding: 2em 0;
+                letter-spacing: 4px;
+                p {
+                    font-size: 1.2rem;
+                    color: white;
+                    font-weight: 700;
+                    }
+                }
+            }
+        }
+}

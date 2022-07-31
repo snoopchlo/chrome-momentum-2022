@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <!-- Google Fonts -->
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./dist/style.css">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+    </head>
+    <body>
+        <div class="circle1 circle"></div>
+        <div class="circle2 circle"></div>
+        <div class="circle3 circle"></div>
+        <div class="circle4 circle"></div>
+        <div class="circle5 circle"></div>
+        <section class="glass animate__animated animate__fadeIn responsive">
+            <!-- 1) Login form -->
+            <form class="login-form hidden">
+                <label class="login-form__question">What is your name?</label>
+                <input 
+                    type="text" 
+                    class="user-name" 
+                    name="user-name" 
+                    maxlength="20"
+                    required
+                    >
+                <button class="login-form__btn" type="submit">submit</button>
+            </form>
+   
+           
+
+            <main class="main hidden responsive">
+                <h1 class="greeting hidden animate__animated animate__fadeInDown"></h1>
+                    <!-- Quotes -->
+                <div class="quotes-container animate__animated animate__fadeInDown">
+                    <span class="quotes-container__quote"></span>
+                    <span class="quotes-container__author"></span>
+                </div>
+                <form class="search animate__animated animate__fadeInDown">
+                    <input 
+                    type="text" 
+                    placeholder="Search Google or type a URL"
+                    />
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <section class="contents">
+                    <div class="widget animate__animated animate__fadeInLeft">
+                        <!-- Clock -->
+                        <article class="clock-container">
+                            <h2 class="clock"></h2>
+                        </article>   
+                        
+                        <!-- Weather & City -->
+                        <article class="weather-city">
+                            <span class="city-name">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="city-name__text"></p>
+                            </span>
+                            <img class="weather-icon">
+                            <span class="weather-info">
+                                <p></p>
+                            </span>
+                        </article>
+                    </div>
+
+             
+                        <article class="short-cuts animate__animated animate__fadeInLeft">
+                            <ul>
+                                <li class="icon1"><a href="https://www.google.com/"><i class="fa-brands fa-google"></i></a></li>
+                                <li class="icon2"><a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li class="icon3"><a href="https://snoopchlo.github.io/kakaotalk-clone-2022/"><i class="fa-regular fa-circle-envelope fa-lg"></i></a></li>
+                                <li class="icon4"><a href="https://www.youtube.com/watch?v=99XF71Fpjl8"><i class="fa-solid fa-music"></i></a></li>
+                            </ul>
+                            
+                        </article>
+                    <!-- To do list -->
+                    <article id="todo-container" class="animate__animated animate__fadeInRight">
+                        <span id="todo-title">TODO LIST</span>
+                        <form id="todo-form">
+                            <input type="text" placeholder="Write a to do and press enter" >
+                        </form>
+                        <ul id="todo-list"></ul>
+                    </article>
+                </section>
+                  
+                
+
+                </article>
+                <!-- Footer -->
+                <footer class="main-footer">  
+                    <div class="main-footer__color-btn">
+                        <h5>change colour</h5><i class="fa-regular fa-brush fa-sm"></i>
+                    </div>
+                </footer>
+                
+            </main>
+        </section>
+            
+      
+       
+        <script src="./js/login.js" async defer></script>
+        <script src="./js/clock.js" async defer></script>
+        <script src="./js/quotes.js" async defer></script>
+
+        <script type="module" src="./js/todo.js" async defer></script>
+        <script type="module" src="./js/background.js" async defer></script>
+        <script type="module" src="./js/weather.js" async defer></script>
+     
+        <script src="https://kit.fontawesome.com/eabde6f642.js" crossorigin="anonymous"></script>
+    </body>
+</html>
